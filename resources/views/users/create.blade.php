@@ -1,5 +1,5 @@
-<x-app-layout>
-   <x-slot name="header">
+<x-app-layout >
+   <x-slot name="header" class="">
        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
            {{ __('Create Users') }}
        </h2>
@@ -12,6 +12,11 @@
                   <x-splade-form class="space-y-4" action="{{ route('users.store') }}">
                      <x-splade-input name="name"  label="Name" />
                      <x-splade-input name="email" type="email"  label="Email"/>
+                     <x-splade-select name="gender" label="Gender" >
+                        <option value="" disabled>Select your gender...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                     </x-splade-select>
                      <x-splade-input name="password" type="password"  label="Password"/>
                      <x-splade-submit label="Save" :spinner="false" />
                  </x-splade-form>

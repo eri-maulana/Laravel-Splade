@@ -1,5 +1,5 @@
-<x-app-layout>
-    <x-slot name="header">
+<x-app-layout >
+    <x-slot name="header" >
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users') }}
         </h2>
@@ -8,9 +8,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-splade-link href="{{ route('users.create') }}"
-                class="p-3 bg-teal-500 hover:bg-teal-400 shadow-lg text-white rounded-md">Create User</x-splade-link>
+                class="p-3 bg-teal-500 hover:bg-teal-400 shadow-lg text-white rounded-md ">Create User</x-splade-link>
 
-            <x-splade-table :for="$users" pagination-scroll="head">
+            <x-splade-table :for="$users" pagination-scroll="head" class="mt-5">
                 <x-splade-cell actions as="$user" class="">
                     <a href="{{ route('users.edit', $user) }}"
                         class="p-2 bg-sky-400 hover:bg-sky-300 rounded-md text-xs text-white me-2">Edit</a>
