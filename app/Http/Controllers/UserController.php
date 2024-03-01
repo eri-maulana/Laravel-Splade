@@ -19,8 +19,19 @@ class UserController extends Controller
             'users' => SpladeTable::for(User::class)
                 ->column('name')
                 ->column('email')
+                ->column('gender')
                 ->column('actions')
+                ->searchInput('name')
                 ->paginate(15)
+                ->selectFilter(
+                    'gender',
+                    [
+                        'Male' => 'male',
+                        'Female' => 'female',
+                    ],
+                    noFilterOption: true,
+                    noFilterOptionLabel: 'All Gender'
+                )
         ]);
     }
 
